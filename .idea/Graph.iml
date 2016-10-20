@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/BruteSolver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/Solver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/PotatoesSolver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/Signature.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/PotatoesSolver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/BruteSolver.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/SolverItf.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/Signature.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/solvers/Solver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/cards/Card.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/cards/CardReader.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/cards/Card.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/cards/CardReader.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/builder/GraphBuilder.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/builder/BuilderCard.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/builder/DrawingBuilderPotatoes.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/builder/DrawingBuilderPotatoes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/builder/GraphBuilder.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/builder/BuilderPotatoes.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graph/Graph.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graph/Node.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graph/Graph.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graph/Edge.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graph/Node.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/graph/Edge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/COLOR.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/lib/gcc/i686-linux-gnu/4.9/include" />
+          <root url="file:///usr/lib/gcc/i686-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/lib/gcc/i686-linux-gnu/4.9/include" />
+          <root url="file:///usr/lib/gcc/i686-linux-gnu/4.9/include-fixed" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
