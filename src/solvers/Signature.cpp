@@ -4,26 +4,23 @@
 
 #include "Signature.h"
 
-const set<Node *> &Signature::getIntersection() const {
-    return intersection;
+
+Signature *Signature::createPastVesion() {
+    /*
+     *  - -> +
+     *  + -> +
+     *  * -> -
+     *  il faut supprimer les nodes qui ne sont pas dans l'intersection
+     */
+    return nullptr;
 }
 
-void Signature::setIntersection(const set<Node *> &intersection) {
-    Signature::intersection = intersection;
+
+Signature *Signature::createFutureVersion() {
+    /*
+     * * -> -
+     *  il faut supprimer les nodes hors intersection (sans +)
+     */
+    return nullptr;
 }
 
-const set<Node *> &Signature::getExcluded() const {
-    return excluded;
-}
-
-void Signature::setExcluded(const set<Node *> &excluded) {
-    Signature::excluded = excluded;
-}
-
-char Signature::getType() const {
-    return type;
-}
-
-void Signature::setType(char type) {
-    Signature::type = type;
-}

@@ -13,6 +13,7 @@
 #include "../builder/DrawingBuilderPotatoes.h"
 #include "../builder/GraphBuilder.h"
 #include "Signature.h"
+#include "PathComponent.h"
 
 class PotatoesSolver : public Solver {
 protected:
@@ -33,13 +34,13 @@ private:
     CardReader* card_reader;
     DrawingBuilderPotatoes* drawingBuilderPotatoes;
 
-    list<Node *> *generate_paths(list<list<Node *> *> *pList);
+    list<Node *> *longest_path(list<list<Node *> *> *pList);
 
 
-    set<Node *> *intersect_potatoes(set<Node *> *intersection, list<Node *> *potato1, list<Node *> *potato2) const;
+    list<Node *> * intersect_potatoes(list<Node *> *pList, list<Node *> *potato);
 
-    void generate_signature(set<Signature *> *signatures, set<Node *> *intersection, list<Node *> *potato1,
-                            list<Node *> *potato2);
+    list<list<PathComponent *> *> *
+    allPaths(list<Node *> *potato, list<Node *> *intersection_previous, list<Node *> *intersection_next);
 };
 
 

@@ -6,29 +6,37 @@
 #define GRAPH_SIGNATURE_H
 
 
+#include <list>
 #include "../graph/Node.h"
+#include "PathComponent.h"
+
 using namespace std;
 class Signature {
 private :
-    set<Node*> intersection;
-    set<Node*> excluded;
-    char type;
+
+    list<PathComponent*>* components;
 public:
-    const set<Node *> &getIntersection() const;
 
-    void setIntersection(const set<Node *> &intersection);
+    Signature(list<PathComponent *> *components);
+    Signature* createPastVesion();
+    Signature* createFutureVersion();
 
-    const set<Node *> &getExcluded() const;
-
-    void setExcluded(const set<Node *> &excluded);
-
-    char getType() const;
-
-    void setType(char type);
-
+    virtual ~Signature();
 };
 
 
 #endif //GRAPH_SIGNATURE_H
+
+Signature::Signature(list<PathComponent *> *components) : components(components) {}
+
+
+Signature::~Signature() {
+    list<PathComponent*>::iterator component_it;
+
+    for (component_it = components->begin(); component_it != components->end(); ++component_it){
+        delete *component_it;
+    }
+    delete components;
+}
 
 
