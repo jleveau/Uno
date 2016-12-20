@@ -1,15 +1,26 @@
 #include <iostream>
 #include <dirent.h>
 #include <cstring>
-#include <sstream>
 #include "src/solvers/Solver.h"
 #include "src/solvers/BruteSolver.h"
 #include "src/solvers/PotatoesSolver.h"
+#include "src/solvers/ProbabilisticSolver.h"
 
 using namespace std;
 int main(int argc, char* argv[]) {
-    if (argc != 4) {
+    if (argc == 0){
+        cout << "Usage : directory-of-decks output_path solver [k] \n"
+                "solver : 0 = BRUTE "
+                "solver : 1 = Potatoes "
+                "solver : 2 = Probabilistic ";
+        return 1;
+    }
+        if (argc < 4) {
         cout << "Invalid number of argument, must be : <input_path> <output_path> [solver]";
+        return 1;
+    }
+    if (atoi(argv[3]) == 2 && argc < 5) {
+        cout << "Invalid number of argument, must be : <input_path> <output_path> [solver] k";
         return 1;
     }
 
@@ -23,6 +34,9 @@ int main(int argc, char* argv[]) {
             break;
         case Solver::POTATOES:
             solver = new PotatoesSolver();
+            break;
+        case Solver::PROBABILISTIC:
+            solver = new ProbabilisticSolver(atoi(argv[4]));
             break;
         default:
             solver = new PotatoesSolver();

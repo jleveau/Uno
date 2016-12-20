@@ -14,6 +14,7 @@ class Solver : public SolverItf {
 public:
     static const int BRUTE = 0;
     static const int POTATOES = 1;
+    static const int PROBABILISTIC = 2;
 
     const std::string &getInput_path() const;
 

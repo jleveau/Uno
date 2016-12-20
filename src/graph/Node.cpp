@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <list>
 #include "Node.h"
 using namespace std;
 
@@ -32,16 +33,6 @@ set<Node *> *Node::getNeighbors() const {
     return neighbors;
 }
 
-void Node::setNeighbors(set<Node *> *neighbors) {
-    Node::neighbors = neighbors;
-}
-
-bool Node::isLeaf(){
-    if (neighbors == nullptr)
-        return true;
-    return neighbors->empty();
-}
-
 bool Node::isMarked() const {
     return marked;
 }
@@ -54,14 +45,28 @@ int Node::getColor() const {
     return color;
 }
 
-void Node::setColor(int color) {
-    Node::color = color;
-}
-
 int Node::getNumber() const {
     return number;
 }
 
-void Node::setNumber(int number) {
-    Node::number = number;
+std::list<Node *> *Node::getUnmarkedNeighbors() const {
+    std::list<Node*>* nodes = new std::list<Node*>();
+    nodes->resize(neighbors->size());
+    copy(neighbors->begin(), neighbors->end(), nodes->begin());
+
+    std::list<Node*>::iterator it;
+    for (it = nodes->begin(); it != nodes->end(); ++it){
+        if ((*it)->isMarked()){
+            nodes->remove(*it);
+        }
+    }
+    return nodes;
+}
+
+int Node::getLabel() const {
+    return label;
+}
+
+void Node::setLabel(int label) {
+    Node::label = label;
 }

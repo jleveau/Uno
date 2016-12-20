@@ -5,13 +5,14 @@
 #ifndef GRAPH_PATHCOMPONENT_H
 #define GRAPH_PATHCOMPONENT_H
 
-
 #include "../graph/Node.h"
 
 class PathComponent {
 
 private:
     Node* node;
+    char separator;
+
 public:
     Node *getNode() const;
 
@@ -20,10 +21,7 @@ public:
     PathComponent(Node *node);
 
     PathComponent(Node *node, char separator);
-
-private:
-    char separator;
-
+    std::string toString();
 };
 
 

@@ -28,6 +28,8 @@ public:
     std::string toString();
     void unMarkNodes();
 
+    void applyRandomColor(int i);
+
 private:
     //Attributes
     std::set<Node *>* nodes ;

@@ -13,30 +13,32 @@
 using namespace std;
 class Signature {
 private :
-
     list<PathComponent*>* components;
+    int length;
+
 public:
 
     Signature(list<PathComponent *> *components);
+
+    Signature(list<PathComponent *> *components, int length);
+
     Signature* createPastVesion();
-    Signature* createFutureVersion();
+    Signature* createFutureVersion(list<Node*>* intersection_next);
 
     virtual ~Signature();
+
+    Signature * merge(Signature* past_signature);
+
+    list<PathComponent *> *getComponents() const;
+
+    void setComponents(list<PathComponent *> *components);
+
+    string toString();
+
+    bool match(Signature *past_signature);
 };
 
 
 #endif //GRAPH_SIGNATURE_H
-
-Signature::Signature(list<PathComponent *> *components) : components(components) {}
-
-
-Signature::~Signature() {
-    list<PathComponent*>::iterator component_it;
-
-    for (component_it = components->begin(); component_it != components->end(); ++component_it){
-        delete *component_it;
-    }
-    delete components;
-}
 
 

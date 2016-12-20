@@ -9,6 +9,7 @@
 #include <vector>
 #include <set>
 #include <string>
+#include <list>
 
 class Node {
 
@@ -16,32 +17,31 @@ public:
     Node();
 
     int getColor() const;
-
-    void setColor(int color);
-
     int getNumber() const;
 
-    void setNumber(int number);
 
     Node(int color, int number);
 
     std::set<Node *> *getNeighbors() const;
+    std::list<Node *> * getUnmarkedNeighbors() const;
 
-    void setNeighbors(std::set<Node *> *neighbors);
 
     bool isMarked() const;
-
     void setMarked(bool marked);
 
     void link_with(Node *pNode);
     std::string toString();
-    bool isLeaf();
 
 private:
     std::set<Node*>* neighbors;
     int color;
     int number;
     bool marked;
+    int label;
+public:
+    int getLabel() const;
+
+    void setLabel(int label);
 };
 
 

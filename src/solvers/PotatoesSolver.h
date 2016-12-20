@@ -27,20 +27,19 @@ private :
     Graph* graph;
     std::vector<Card *> * cards;
     GraphBuilder *builder;
-public:
-    virtual ~PotatoesSolver();
-
-private:
     CardReader* card_reader;
     DrawingBuilderPotatoes* drawingBuilderPotatoes;
 
+    list<Node *> * intersect_potatoes(list<Node *> *pList, list<Node *> *potato);
+    void mergeSignatures(list<Signature *> *signatures_current, list<Signature *> *signatures_past);
+    list<Signature*>* paths_to_Signatures(list<list<PathComponent*>*>* paths);
+    list<list<PathComponent *> *> *allPaths(list<Node *> *potato, list<Node *> *intersection_previous,
+                                                            list<Node *> *intersection_next);
+
+public:
+    virtual ~PotatoesSolver();
     list<Node *> *longest_path(list<list<Node *> *> *pList);
 
-
-    list<Node *> * intersect_potatoes(list<Node *> *pList, list<Node *> *potato);
-
-    list<list<PathComponent *> *> *
-    allPaths(list<Node *> *potato, list<Node *> *intersection_previous, list<Node *> *intersection_next);
 };
 
 

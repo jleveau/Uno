@@ -7,6 +7,8 @@
 #include "Graph.h"
 #include <sstream>
 #include <iostream>
+#include <random>
+#include <algorithm>
 
 using namespace std;
 Graph::Graph(std::set<Node *>* &nodes) : nodes(nodes) {}
@@ -126,4 +128,19 @@ void Graph::unMarkNodes() {
     std::set<Node *>::iterator nodes_it;
     for (nodes_it = nodes->begin(); nodes_it != nodes->end(); nodes_it++)
         (*nodes_it)->setMarked(false);
+}
+
+void Graph::applyRandomColor(int i) {
+    const int range_from  = 0;
+    const int range_to    = i-1;
+    std::random_device                  rand_dev;
+    std::mt19937                        generator(rand_dev());
+    std::uniform_int_distribution<int>  distr(range_from, range_to);
+
+    std::set<Node *>::iterator nodes_it;
+
+    for (nodes_it = nodes->begin(); nodes_it != nodes->end(); nodes_it++) {
+        int color = distr(generator);
+        (*nodes_it)->setLabel(color);
+    }
 }
